@@ -11,7 +11,7 @@ elif c == e:
 else:
     print (f"Bus method takes{c} mins, is faster!")
 
-# f i longer.
+# f is longer.
 # Walk to bus stop and take the bus is quicker.
 
 X = 1==1
