@@ -4,6 +4,8 @@ while 1==1 :
     i += 1
     if i <= 10:
         n += i
-        print (f"The number is {i}, the answer of sequence is {n}.")
+        print (f"The sequence is {n}.")
     else:
         quit
+# Number i represents the first, second, third... figures.
+# Answer n represents the output of this calculation.
