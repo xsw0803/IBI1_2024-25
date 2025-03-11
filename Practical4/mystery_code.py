@@ -11,11 +11,17 @@ from random import randint
 from math import ceil
 
 progress=0
+#run the while loop
 while progress>=0:
+	#each run add one lap to represent the number of loops
 	progress+=1
+	#make two random numbers
 	first_n = randint(1,6)
 	second_n = randint(1,6)
+	#if random numbers equal
 	if first_n == second_n:
+		#then print the number of loops we used
 		print(progress)
+		#then get out off the while loop
 		break
 
