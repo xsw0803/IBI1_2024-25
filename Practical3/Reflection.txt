@@ -1,0 +1,3 @@
+I make a website at https://xsw0803.github.io.
+I've got basic understanding of branch, revert, add, commit and push(each add and commit before) .
+But fetch, pull and merge still remain problems, needing more exercises.
