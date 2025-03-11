@@ -13,4 +13,3 @@ else:
     print (f"Your bmi is {bmi: .2f}, that's great!")
 
 # This input shows the person is too thin.
-

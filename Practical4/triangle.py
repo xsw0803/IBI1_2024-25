@@ -1,6 +1,5 @@
 i = 0 
 n = 0
-
 #to run the while looop
 while i<= 10 :
     #for each loop, i represent the number of loops
