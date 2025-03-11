@@ -13,3 +13,10 @@ else:
 
 # f i longer.
 # Walk to bus stop and take the bus is quicker.
+
+X = 1==1
+Y = 1==2
+W = 1==1 and 1==2 
+print (W)
+
+# W is false.
