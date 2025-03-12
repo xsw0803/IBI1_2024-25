@@ -7,7 +7,7 @@ f = d + e #total time for car method
 
 if c > f:
     print (f"Car menthod takes {f} mins, is faster!")
-elif c == e:
+elif c == f:
     print ("The same.")
 else:
     print (f"Bus method takes {c} mins, is faster!")
