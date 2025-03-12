@@ -4,9 +4,9 @@ Tn = 0
 while i<= 10 :
     #for each loop, i represent the number of loops
     i += 1
-    #n is the output, each time to add the ordinal numbers of this number.
+    #Tn is the output, each time to add the ordinal numbers of this number.
     Tn += i
     print (f"The sequence is {Tn}.")
 
 # Number i represents the first, second, third... figures.
-# Answer n represents the output of this calculation.
+# Answer Tn represents the output of this calculation.
