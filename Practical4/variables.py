@@ -6,11 +6,11 @@ e = 5 #walk to park
 f = d + e #total time for car method
 
 if c > f:
-    print (f"Car menthod takes{f} mins, is faster!")
+    print (f"Car menthod takes {f} mins, is faster!")
 elif c == e:
     print ("The same.")
 else:
-    print (f"Bus method takes{c} mins, is faster!")
+    print (f"Bus method takes {c} mins, is faster!")
 
 # f is longer.
 # Walk to bus stop and take the bus is quicker.
