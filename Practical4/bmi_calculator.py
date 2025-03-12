@@ -1,5 +1,5 @@
-weight = 55
-height = 1.8
+weight = 55 #kg
+height = 1.8 #m
 
 #calculate bmi
 bmi = weight/ height**2
