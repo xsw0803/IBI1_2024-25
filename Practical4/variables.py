@@ -20,4 +20,7 @@ Y = 1==2
 W = 1==1 and 1==2 
 print (W)
 
-# W is false.
+# if x is true, y is false, w is false.
+# if x is true, y is true, w is true.
+# if x is false, y is false, w is false.
+# if x is false, y is true, w is false.
