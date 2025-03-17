@@ -10,6 +10,8 @@ Language_popularity = {
     'TypeScript': 38.5,
 }
 
+print(Language_popularity.get('Python'))
+
 df = pd.DataFrame({"Language": Language_popularity.keys(), 
                    "Popularity": Language_popularity.values()})
 
@@ -35,5 +37,3 @@ for bar in p1:
     )
 
 plt.show()
-
-print(Language_popularity.get('Python'))
