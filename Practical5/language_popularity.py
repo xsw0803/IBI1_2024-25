@@ -28,8 +28,8 @@ y = list(Language_popularity.values())
 #yticks is from 0 to 80, step is 10
 p1 = plt.bar(x, y, color='skyblue', alpha=1.0)
 plt.xlabel('Language')
-plt.ylabel('Popularity')
-plt.title('The poularity of top5 input language')
+plt.ylabel('Popularity (Percentage)')
+plt.title('The percentage poularity of top5 input language')
 plt.yticks(range(0,81,10))
 
 #add text for each value. Show them in the bar plot.
