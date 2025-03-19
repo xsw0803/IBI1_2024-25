@@ -3,9 +3,15 @@ import pandas as pd
 import numpy as np
 
 '''
-create a dictionary about input language and popularity.
+Create a dictionary about input language and popularity.
 Print the pupolarity of Python from the dictionary.
+Create a dataframe about language and popularity, then put all keys in
+dictionary as x, and all values in dictionary as y.
+Draw the bar plot and label x as language, label y as percentage of popularity,
+the yticks is from 0 to 80, step is 10.
+Add text for each y values of each language and show them on the plot.
 '''
+
 Language_popularity = {
     'JavaScript': 62.3,
     'HTML': 52.9,
