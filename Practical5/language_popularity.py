@@ -5,6 +5,8 @@ import numpy as np
 '''
 Create a dictionary about input language and popularity.
 Print the pupolarity of Python from the dictionary.
+Create a new dictionary as the copy of last one, 
+and modify the 'Python' population to 51.2. Print new one.
 Create a dataframe about language and popularity, then put all keys in
 dictionary as x, and all values in dictionary as y.
 Draw the bar plot and label x as language, label y as percentage of popularity,
@@ -20,7 +22,10 @@ Language_popularity = {
     'TypeScript': 38.5,
 }
 
-print(Language_popularity.get('Python'))
+#Create a new dictionary as the copy of last one, and modify the 'Python' population to 51.2.
+Language_popularity_new = Language_popularity.copy()
+Language_popularity_new['Python'] = 51.2
+print(Language_popularity_new)
 
 #create a dataframe on language and popularity
 df = pd.DataFrame({"Language": Language_popularity.keys(), 
