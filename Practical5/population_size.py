@@ -29,14 +29,10 @@ china_provinces = {
 }
 
 #Get all values in dictionary and put them in the lists.
-uk_population = []
-for i in uk_countries.values():
-    uk_population.append(i)
+uk_population = uk_countries.values()
 print(sorted(uk_population))
 
-china_population = []
-for i in china_provinces.values():
-    china_population.append(i)
+china_population = china_provinces.values()
 print(sorted(china_population))
 
 #Draw the first picture as pie chart about uk countries.
