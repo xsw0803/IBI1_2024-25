@@ -27,13 +27,9 @@ Language_popularity_new = Language_popularity.copy()
 Language_popularity_new['Python'] = 51.2
 print(Language_popularity_new)
 
-#create a dataframe on language and popularity
-df = pd.DataFrame({"Language": Language_popularity.keys(), 
-                   "Popularity": Language_popularity.values()})
-
 #put language into x and popularity into y
-x = list(Language_popularity.keys())
-y = list(Language_popularity.values())
+x = Language_popularity.keys()
+y = Language_popularity.values()
 
 #draw the plot by x,y, color is skyblue and transquency is 1.0
 #yticks is from 0 to 80, step is 10
