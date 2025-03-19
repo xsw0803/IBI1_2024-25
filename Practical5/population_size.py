@@ -61,7 +61,7 @@ plt.title('Population distribution of UK provinces')
 
 labels2 = list(china_provinces.keys())
 sizes2 = list(china_provinces.values())
-colors = ['#FF9999', '#66B2FF', '#99FF99', '#FFCC99']
+colors = ['#FF9999', '#66B2FF', '#99FF99', '#FFCC99', '#66B2FF']
 explode = (0.1, 0, 0, 0, 0)
 
 #Draw second figure as pie chart about china provinces.
