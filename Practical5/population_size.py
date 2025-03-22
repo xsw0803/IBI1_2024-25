@@ -9,8 +9,7 @@ List every values of two dictionaries to put population into lists and
 print sorted lists.
 Draw the first figure as pie chart about uk countries population.
 Draw second figure as pie chart about china provinces population.
-Show two figures as same time as pie chart.
-
+Show two figures as same time.
 '''
 
 #Create dictionary to record countries and matched population.
