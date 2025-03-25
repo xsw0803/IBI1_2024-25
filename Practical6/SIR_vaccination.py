@@ -12,7 +12,6 @@ def simulate_vaccination(vaccination_percent):
     For this function, total N is 10000, vaccinated population is N*vaccination_percent/100.
     Susceptible population is N - vaccnated population and infected population.
     Initial infected population is 1.
-    Initial recoveried population, which means it will not be infected, as vaccinated population.
     '''
     N = 10000
     vaccinated = int(N * vaccination_percent / 100)
@@ -21,7 +20,7 @@ def simulate_vaccination(vaccination_percent):
     R = vaccinated  
 
     '''
-    beta is the probability of infection and gamma is probabilty of recovery.
+    Beta is the probability of infection and gamma is probabilty of recovery.
     Create three separate lists for each population.
     '''
     beta = 0.3
@@ -31,16 +30,16 @@ def simulate_vaccination(vaccination_percent):
     R_list = [R]
 
     '''
-    The time steps is 1000, meaning we take the stimulation for 1000 days.
+    The time steps is 1000, meaning we take the simulation for 1000 days.
 
-    Use for loop in tiem steps and caluculate the propobility as infection_p.
+    Use for loop in time steps and caluculate the propobility as infection_p.
 
     new_I is the new infected population. Achieve this by random.choice to assign 0/1 for infected and
     not infected person in all susceptible population, with a infection propability as infection_p.
     Then sum up all the values to get how many people are infected, because only 1 will be calculated
     and 0 doesn't make sense.
 
-    Do the same foe new_R, meaning the new population of recoveried people.
+    Do the same foe new_R, meaning the new population of recovered people.
     '''
 
     time_steps = 1000
@@ -52,7 +51,7 @@ def simulate_vaccination(vaccination_percent):
             Specially, sometimes I or S will be negative numbers.
             To make this function works well, I add a step to determine the S or I as positive.
 
-            If S <= 0, then all susceotible population has been infected before, new I is 0.
+            If S <= 0, then all susceptible population has been infected before, new I is 0.
             Else, new_I must smaller than S.
             '''
             if S <= 0:
@@ -79,7 +78,7 @@ def simulate_vaccination(vaccination_percent):
             
             '''
             Then infected population is previous infected population + new infected population
-            and - new recoveried population.
+            and - new recovered population.
 
             Sepcially, to make sure I is positive numbers for next loop, I must be 0 or I(positive).
             '''
@@ -87,7 +86,7 @@ def simulate_vaccination(vaccination_percent):
             I = max(I, 0)
 
             '''
-            Recoveried population is previous recoveried population + new recoveried population.
+            Recovered population is previous recovered population + new recovered population.
             '''  
             R += new_R
     
