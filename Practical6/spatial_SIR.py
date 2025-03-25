@@ -36,7 +36,7 @@ Create a for loop to list all the time steps:
     infected_location is where the stimulation started and infected_list is a list which
     can include all x and y as points, not one-dimension numbers.
 '''
-for t in range(time_steps):
+for t in range(time_steps + 1):
     infected_location = np.where(population == 1)
     infected_list = list(zip(infected_location[0], infected_location[1]))
     
@@ -91,7 +91,7 @@ for t in range(time_steps):
     '''
     Draw and show the plot as population points and add the title.
     '''
-    if t == 99:
+    if t == time_steps:
         plt.imshow(population, cmap='viridis', interpolation='nearest')
         plt.title(f"Spatial SIR for time step {t}", fontsize = 12)
 
