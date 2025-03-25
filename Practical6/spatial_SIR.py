@@ -33,7 +33,7 @@ plt.figure(figsize=(6,4), dpi=150)
 '''
 Create a for loop to list all the time steps:
     
-    infected_location is where the stimulation started and infected_list is a list which
+    infected_location is where the simulation started and infected_list is a list which
     can include all x and y as points, not one-dimension numbers.
 '''
 for t in range(time_steps + 1):
