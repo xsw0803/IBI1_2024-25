@@ -39,7 +39,7 @@
     plt.grid(True)
     plt.show()
 
-    In this way, I don't need random.choice() and loops to help randomly stimulate the infection.
+    In this way, I don't need random.choice() and loops to help randomly ssimulate the infection.
     I can get the situmlation with derivatives, using odeint caluclation in python.
 
 2. I choose a different way to calculate the infectious neighbours.
