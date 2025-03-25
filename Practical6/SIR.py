@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 The total population is 10000.
 The susceptible population is total number - infected number.
 Innitial infected number is 1.
-Initial recoveried number is 1.
+Initial recovered number is 1.
 
 beta is the probability of infection and gamma is probabilty of recovery.
 Create three separate lists for each population.
@@ -31,7 +31,7 @@ not infected person in all susceptible population, with a infection propability 
 Then sum up all the values to get how many people are infected, because only 1 will be calculated
 and 0 doesn't make sense.
 
-Do the same foe new_R, meaning the new population of recoveried people.
+Do the same for new_R, meaning the new population of recovered people.
 '''
 
 time_steps = 1000
@@ -43,8 +43,8 @@ for i in range(time_steps):
     
     '''
     Suspecible population - new infected population each time and append into the lists of S.
-    Infected population + new infected population and - nwe recoveried population and append into I.
-    Rcoveried population + new recoveried population and append into the list of R.
+    Infected population + new infected population and - nwe recovered population and append into I.
+    Rcovered population + new recovered population and append into the list of R.
     '''
     
     S -= new_I
