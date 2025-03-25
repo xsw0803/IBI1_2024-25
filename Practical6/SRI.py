@@ -1,0 +1,41 @@
+import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+
+def sir_model(y, t, beta, gamma, N):
+    S, I, R = y
+    dSdt = -beta * S * I / N
+    dIdt = beta * S * I / N - gamma * I
+    dRdt = gamma * I
+    return [dSdt, dIdt, dRdt]
+
+
+N = 10000         
+beta = 0.3        
+gamma = 0.05       
+initial_infected = 1 
+days = 200      
+
+
+S0 = N - initial_infected
+I0 = initial_infected
+R0 = 0
+y0 = [S0, I0, R0]
+
+
+t = np.linspace(0, days, days)
+
+
+solution = odeint(sir_model, y0, t, args=(beta, gamma, N))
+S, I, R = solution.T  
+
+plt.figure()
+plt.plot(t, S, label='Susceptible')
+plt.plot(t, I, label='Infected')
+plt.plot(t, R, label='Recovered')
+plt.xlabel('Days')
+plt.ylabel('Population')
+plt.title(f'SIR Model: β={beta}, γ={gamma}, R0={beta/gamma:.2f}')
+plt.legend()
+plt.grid(True)
+plt.show()
