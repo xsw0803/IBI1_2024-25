@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 Make a list of vaccination_percentages as 0 to 100%.
 Define a function as simulate_vaccination and inputs vaccination_percent.
 '''
-
 vaccination_percentages = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 def simulate_vaccination(vaccination_percent):
+    
     '''
     For this function, total N is 10000, vaccinated population is N*vaccination_percent/100.
     Susceptible population is N - vaccnated population and infected population.
