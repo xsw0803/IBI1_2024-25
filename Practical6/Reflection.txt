@@ -41,3 +41,8 @@
 
     In this way, I don't need random.choice() and loops to help randomly stimulate the infection.
     I can get the situmlation with derivatives, using odeint caluclation in python.
+
+2. I choose a different way to calculate the infectious neighbours.
+Then, I use arrays to achieve changing points of infected person, but the for loops and if selection
+will be very complicated.
+Maybe there can be a simpler way to do this calculation.
