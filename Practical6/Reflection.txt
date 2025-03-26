@@ -1,4 +1,7 @@
-1. To simplify this calculation, I can caluclate a series of equation to calculate and show.
+1. 
+For SIR.py, to simplify this calculation, 
+I can caluclate a series of equation to calculate and show.
+    
     import numpy as np
     from scipy.integrate import odeint
     import matplotlib.pyplot as plt
@@ -39,10 +42,11 @@
     plt.grid(True)
     plt.show()
 
-    In this way, I don't need random.choice() and loops to help randomly ssimulate the infection.
+    In this way, I don't need random.choice() and loops to help randomly simulate the infection.
     I can get the situmlation with derivatives, using odeint caluclation in python.
 
-2. I choose a different way to calculate the infectious neighbours.
+2. 
+I choose a different way to calculate the infectious neighbours.
 Then, I use arrays to achieve changing points of infected person, but the for loops and if selection
 will be very complicated.
 Maybe there can be a simpler way to do this calculation.
