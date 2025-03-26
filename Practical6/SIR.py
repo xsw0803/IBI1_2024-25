@@ -46,7 +46,6 @@ for i in range(time_steps):
     Infected population + new infected population and - nwe recovered population and append into I.
     Rcovered population + new recovered population and append into the list of R.
     '''
-    
     S -= new_I
     I += new_I - new_R
     R += new_R
