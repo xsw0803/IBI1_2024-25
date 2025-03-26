@@ -40,7 +40,7 @@ for i in range(time_step +1):
     infected_list = list(zip(infected_ones[0],infected_ones[1]))
     new_infection =[]
     for x, y in infected_list:
-        neighbor(x, y)
+        neighbor(x, y, new_infection)
     for x, y in new_infection:
         infect(x, y)
     
