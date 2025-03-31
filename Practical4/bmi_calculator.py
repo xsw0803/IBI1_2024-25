@@ -1,3 +1,11 @@
+'''
+First, get inputs as weight and height, be careful that weight is in kg and height is in m.
+Then do the calculate followed as weight/(height**2).
+
+Use if to catelog the number as thin, normal and obesity.
+Print the result with a remind.
+'''
+
 weight = 55 #kg
 height = 1.8 #m
 
