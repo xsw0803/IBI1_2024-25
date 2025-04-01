@@ -19,10 +19,9 @@ for line in input:
                 output.write(f'\n{name}')
                 name_list.append(f'{name}')
             else:
-                name1 = re.sub(r'.+?gene:', '', line)
-                name = re.sub(r'gene_.+?]', '', name1)
+                name = re.sub(r'\s.+?]', '', line)
                 output.write(f'\n>{name}')
-                name_list.append(f'>{name}')
+                name_list.append(f'{name}')
         else:
             sequence = line[:-1]
             output.write(f'{sequence}') 
