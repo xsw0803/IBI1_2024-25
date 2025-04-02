@@ -25,17 +25,20 @@ for line in input:
         else:
             sequence = line[:-1]
             output.write(f'{sequence}') 
+input.close()
+output.close()
 
 input2 = open('pre_data.fa', 'r')
 output2 = open('tata_genes.fa', 'w')
 
 t = 0
 for line in input2:
+    print(line)
     if not re.search(r'>', line):
         t += 1
-        sequence = line[:-1]
-        seq.append(sequence)
-        if re.search(r'TATA(A|T)A(A|T)', sequence):
+        seq.append(line)
+        if re.search(r'TATA[A|T]A[A|T]', line):
             output2.write(f'{name_list[t-1]}')
-            output2.write(f'{seq[t-1]}\n')
+            output2.write(f'{seq[t-1]}')
+
     
