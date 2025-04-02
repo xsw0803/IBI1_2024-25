@@ -33,9 +33,9 @@ for i in sliced_list:
     t += 1
     if t == 1:
         if re.search(r'TATA(A|T)A(A|T)', i):
-            output.write(f'{name_list[t-1][:-1]} Number of TATA box instances is {count_tata(i)}.\n')
+            output.write(f'{name_list[t-1][:-1]}  Number of TATA box instances is {count_tata(i)}.\n')
             output.write(i)
     else:
         if re.search(r'TATA(A|T)A(A|T)', i):
-            output.write(f'\n{name_list[t-1][:-1]} Number of TATA box instances is {count_tata(i)}.\n')
+            output.write(f'\n{name_list[t-1][:-1]}  Number of TATA box instances is {count_tata(i)}.\n')
             output.write(i)
