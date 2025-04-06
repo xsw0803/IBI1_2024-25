@@ -21,9 +21,6 @@ for line in input:
             name_list.pop()
     else:
         name_list.append(line)
-    
-print(len(name_list))
-print(len(sliced_list))
 
 def count_tata(seq):
     length = 7
