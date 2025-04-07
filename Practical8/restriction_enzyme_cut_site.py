@@ -9,8 +9,10 @@ def cut_position(DNA_seq, recognition_seq):
     judge = True
     for i in range(0, len(DNA_seq)):
         if DNA_seq[i] not in ['A', 'G', 'T', 'C']:
-            print('Unexpected nucleotides in the sequence.')
-            judge = False
+            unexpected = True
+    if unexpected == True:
+        print('Unexpected nucleotides in the sequence.')
+        judge = False
     if judge == True:
         for i in range(0, length - reco_length + 1):
             if DNA_seq[i:i + reco_length] == recognition_seq:
