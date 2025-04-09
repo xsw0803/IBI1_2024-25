@@ -1,6 +1,6 @@
 import re
 prompt = 'Which slice do you want?'
-prompt += '\nGTAG or GCAG or ATAC.'
+prompt += '\nGTAG or GCAG or ATAC:'
 print(prompt)
 user_input = str(input())
 input = open('tata_genes.fa', 'r')
@@ -12,11 +12,13 @@ print(donor, acceptor)
 
 sliced_list = []
 name_list = []
+gene_list = []
 for line in input:
     if not re.search(r'>', line):
-        sliced_seq = re.findall(donor+r'.+'+acceptor, line)
-        for i in sliced_seq:
-            sliced_list.append(i)
+        if re.findall(donor+r'.+'+acceptor, line):
+            sliced_seq = re.findall(donor+r'.+'+acceptor, line)
+            gene_list.append(line)
+            sliced_list.append(sliced_seq[0])
         if not re.findall(donor+r'.+'+acceptor, line):
             name_list.pop()
     else:
@@ -32,13 +34,14 @@ def count_tata(seq):
     return count
 
 t = 0
-for i in sliced_list:
+for i in range(0, len(sliced_list)):
+    judge = sliced_list[i]
     t += 1
     if t == 1:
-        if re.search(r'TATA[A|T]A[A|T]', i):
-            output.write(f'{name_list[t-1][:-1]}  Number of TATA box instances is {count_tata(i)}.\n')
-            output.write(i)
+        if re.search(r'TATA[A|T]A[A|T]', judge):
+            output.write(f'{name_list[t-1][:-1]}  Number of TATA box instances is {count_tata(judge)}.\n')
+            output.write(gene_list[i][:-1])
     else:
-        if re.search(r'TATA[A|T]A[A|T]', i):
-            output.write(f'\n{name_list[t-1][:-1]}  Number of TATA box instances is {count_tata(i)}.\n')
-            output.write(i)
+        if re.search(r'TATA[A|T]A[A|T]', judge):
+            output.write(f'\n{name_list[t-1][:-1]}  Number of TATA box instances is {count_tata(judge)}.\n')
+            output.write(gene_list[i][:-1])
