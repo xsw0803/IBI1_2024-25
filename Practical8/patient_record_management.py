@@ -6,6 +6,9 @@ class patients:
         self.medical_history = medical_history
     
     def detail(name, age, date_last, medical_history):
-        print(f'{name}\t{age}\t{date_last}\t{medical_history}')
+        print(f'Name: {name}\t\tAge: {age}\t\tLast submission date: {date_last}\t\tMedical history: {medical_history}')
 
-patients.detail('Jack', 18, '2025.04.06', 'A fever last week.')
+patients.detail(input("What's your name?"), 
+                input("What's you age?"), 
+                input("What's your last submission date?"), 
+                input("What's your medical history?"))
