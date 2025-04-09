@@ -1,7 +1,7 @@
-DNA_seq = 'ATCGGATCGGTAGACTAGAACTGATACGTAACGTACCCAAAAGTACAGTA'
-recognition_seq = 'GATCG'
+DNA_seq = input("The DNA sequence:")
+recognition_seq = input("The recognition sequence:")
 
-def cut_position(DNA_seq, recognition_seq):
+def cut_position(DNA_seq, recognition_seq, unexpected):
     count = 0
     length = len(DNA_seq)
     reco_length = len(recognition_seq)
@@ -20,5 +20,5 @@ def cut_position(DNA_seq, recognition_seq):
         if count == 0:
             print('No cut position matches.')
 
-cut_position(DNA_seq, recognition_seq)
+cut_position(DNA_seq, recognition_seq, unexpected=False)
 
