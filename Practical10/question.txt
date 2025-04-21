@@ -1,0 +1,7 @@
+Problem: Plot a boxplot of DALYs across countries in 1990.
+Solution lines: 52 - 59 lines
+Results: A boxplot od DALYs across conutries in 1990.
+    The results meet my expectation.
+    I select all DALYs data which is in 1990, the put them in a new variables as series 'dalys_1990'.
+    To draw the boxplot to show the distribution of basic statistic state of DALYs in 1990, dalys_1990
+    serve as the y values and become the only group.
