@@ -4,10 +4,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 os.chdir("/Users/xsw0803/Desktop/Programme/IBI_practicals/IBI1_2024-25/Practical10/")
-os.getcwd()
-os.listdir()
+print(os.getcwd())
+print(os.listdir())
 
 dalys_data = pd.read_csv("dalys-rate-from-all-causes.csv")
+'''print(dalys_data.head(5))'''
 print(dalys_data.iloc[0:10, 2])
 
 af_year = dalys_data.loc[dalys_data['Entity'] == 'Afghanistan', 'Year']
@@ -57,4 +58,4 @@ plt.ylabel('DALYs')
 plt.title('Distribution of DALYs across countries in 1990')
 plt.show()
 
-
+'''print(dalys_data.loc[dalys_data['DALYs'] > 650000, 'Entity'])'''
