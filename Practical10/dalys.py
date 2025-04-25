@@ -33,13 +33,14 @@ print(dalys_data.loc[year.index, ['Year', 'DALYs']])
 uk = dalys_data.loc[dalys_data['Entity'] == 'United Kingdom', ['DALYs', 'Year']]
 france = dalys_data.loc[dalys_data['Entity'] == 'France', ['DALYs', 'Year']]
 print(uk['DALYs'].mean(), france['DALYs'].mean())
-if uk['DALYs'].mean() > france['DALYs'].mean():
+# UK DALYs is bigger than France.
+'''if uk['DALYs'].mean() > france['DALYs'].mean():
     print('UK DALYs is bigger.')
 elif uk['DALYs'].mean() == france['DALYs'].mean():
     print('UK and France DALYs is the same.')
 else:
-    print('France DALYs is bigger.')
-# UK DALYs is bigger than France.
+    print('France DALYs is bigger.')'''
+
 
 plt.figure(figsize=(8, 6))
 plt.plot(uk.Year, uk.DALYs, 'b+')
