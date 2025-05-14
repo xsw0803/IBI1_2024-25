@@ -19,6 +19,7 @@ def compare(seq1, seq2, identical=0, score=0):
             score += matrix[seq1[i]][seq2[i]]
         else:
             identical += 1
+            score += matrix[seq1[i]][seq2[i]]
     return score, identical
 
 for i in range(len(seq)):
@@ -44,13 +45,13 @@ for i in range(len(seq)):
 3. Comparison analysis
 SODM_HUMAN and SODM_MOUSE:
 Identical percentage = 90.09%
-Score = 1.0
+Score = 1097.0
 SODM_HUMAN and random:
 Idnetical percentage = 4.95%
-Score = -319.0
+Score = -260.0
 SODUM_MOUSE and random:
 Idnetical percentage = 4.50%
-Score = -317.0
+Score = -262.0
 
 4. Huamn and mouse SODM sequences are mostly related.
 '''
