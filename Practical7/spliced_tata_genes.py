@@ -21,9 +21,6 @@ for line in input:
         seq += line.rstrip()
         gene.loc[len(gene['Gene name'])-1, 'Gene sequence'] = seq
 
-donor = user_input[:2]
-acceptor = user_input[-2:]
-
 def count_tata(seq):
     length = 7
     count = 0
@@ -35,7 +32,7 @@ def count_tata(seq):
 
 for gene_seq in gene['Gene sequence']:
     if re.search(r'TATA[A|T]A[A|T]', gene_seq):
-        if re.search(donor+r'.+'+acceptor, gene_seq):
+        if re.search(user_input[:2]+r'.+'+user_input[-2:], gene_seq):
             gene_name = f'>{gene.loc[gene['Gene sequence'] == gene_seq, 'Gene name'].iloc[0]}'
             output.write(f'{gene_name}\tNumber of TATA box is {count_tata(gene_seq)}.\n')
             output.write(f'{gene_seq}\n')
