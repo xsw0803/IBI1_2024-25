@@ -74,6 +74,7 @@ for ontology, (term_id, count) in handler.max_terms.items():
 
 print(f'SAX parsing time: {sax_time.total_seconds():.4f} seconds.\n')
 
+# SAX method is faster.
 if dom_time < sax_time:
     print('DOM method is  faster.')
 elif sax_time < dom_time:
