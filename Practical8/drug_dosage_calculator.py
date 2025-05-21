@@ -13,4 +13,4 @@ def dosage(weight, paracetamol):
         volume = 'Out of paracetamol strength range.'
     return volume
 
-print(dosage(weight, paracetamol))
+print(f'Patient should take {dosage(weight, paracetamol)} ml of paracetamol.')

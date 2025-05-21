@@ -15,7 +15,7 @@ def cut_position(DNA_seq, recognition_seq, unexpected):
     if judge == True:
         for i in range(0, length - reco_length + 1):
             if DNA_seq[i:i + reco_length] == recognition_seq:
-                print(f'The cut position is the {i + 1}th nucleotide "{DNA_seq[i]}".')
+                print(f'The cut position is at the {i + 1}th position with the first nucleotide "{DNA_seq[i]}".')
                 count += 1
         if count == 0:
             print('No cut position matches.')
