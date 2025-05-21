@@ -84,7 +84,7 @@ for i in range(time_step +1):
     if i in print_times:
         plt.subplot(2, 2, print_times.index(i) + 1)
         plt.imshow(population, cmap='viridis', interpolation='nearest')
-        plt.title(f"Plot for time step as {i}")
+        plt.title(f"Plot for time step at {i}")
         
 # Adjust the illustration automatically.
 plt.tight_layout()
