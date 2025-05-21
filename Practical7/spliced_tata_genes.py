@@ -1,12 +1,10 @@
 import re
-import os
 import pandas as pd
 prompt = 'Which slice do you want?'
 prompt += '\nGTAG or GCAG or ATAC:'
 print(prompt)
 user_input = str(input())
 
-os.chdir('/Users/xsw0803/Desktop/Programme/IBI_practicals/IBI1_2024-25/Practical7')
 input = open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa', 'r')
 output = open(f'{user_input}_spliced_genes.fa', 'w')
 
