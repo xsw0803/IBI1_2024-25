@@ -3,7 +3,7 @@ import re
 from Bio.Align import substitution_matrices
 from Bio.Align import PairwiseAligner
 
-os.chdir('/Users/xsw0803/Desktop/Programme/IBI_practicals/IBI1_2024-25/Practical13')
+'''os.chdir('/Users/xsw0803/Desktop/Programme/IBI_practicals/IBI1_2024-25/Practical13')'''
 input = open('Sequence.fa')
 matrix = substitution_matrices.load("BLOSUM62")
 aligner = PairwiseAligner()
