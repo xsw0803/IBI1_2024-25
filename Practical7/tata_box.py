@@ -1,7 +1,6 @@
 import re
-import os
 import pandas as pd
-os.chdir('/Users/xsw0803/Desktop/Programme/IBI_practicals/IBI1_2024-25/Practical7')
+
 input = open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa', 'r')
 output = open('tata_genes.fa', 'w')
 seq = ''
