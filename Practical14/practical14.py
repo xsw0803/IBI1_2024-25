@@ -62,7 +62,7 @@ for term in terms:
 end_time = datetime.now()
 dom_time = end_time - start_time
 for ontology, (term_id, term_name, count) in max_terms.items():
-    print(f'[DOM] {ontology}: {term_id} <{term_name}> have max {count} is_a.')
+    print(f'[DOM] {ontology}:\n {term_id} <{term_name}> Max number:{count} is_a.')
 
 print(f'DOM parsing time: {dom_time.total_seconds():.4f} seconds.\n')
 
@@ -75,15 +75,15 @@ parser.parse(xml_file)
 end_time = datetime.now()
 sax_time = end_time - start_time
 for ontology, (term_id, term_name, count) in handler.max_terms.items():
-    print(f'[SAX] {ontology}: {term_id} <{term_name}> have max {count} is_a.')
+    print(f'[SAX] {ontology}:\nID: {term_id} Name:<{term_name}> Max number:{count} is_a.')
 
 print(f'SAX parsing time: {sax_time.total_seconds():.4f} seconds.\n')
 
 # SAX method is faster.
 if dom_time < sax_time:
-    print('DOM method is  faster.')
+    print('DOM method is faster.')
 elif sax_time < dom_time:
-    print('SAX method is  faster.')
+    print('SAX method is faster.')
 else:
     print('Both methods are the same.')
 # SAX method is faster.
