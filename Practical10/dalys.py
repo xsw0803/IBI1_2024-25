@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-os.chdir("/Users/xsw0803/Desktop/Programme/IBI_practicals/IBI1_2024-25/Practical10/")
+'''os.chdir("/Users/xsw0803/Desktop/Programme/IBI_practicals/IBI1_2024-25/Practical10/")'''
 '''print(os.getcwd())
 print(os.listdir())'''
 
