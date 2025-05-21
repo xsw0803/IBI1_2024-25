@@ -2,16 +2,22 @@ import os
 import re
 from Bio.Align import substitution_matrices
 from Bio.Align import PairwiseAligner
+
 os.chdir('/Users/xsw0803/Desktop/Programme/IBI_practicals/IBI1_2024-25/Practical13')
 input = open('Sequence.fa')
 matrix = substitution_matrices.load("BLOSUM62")
 aligner = PairwiseAligner()
 aligner.substitution_matrix = matrix
 
-seq = []
+sequence = {}
+seq_list = []
 for line in input:
     if not re.search(r'>', line):
-        seq.append(line.rstrip())
+        seq = line.rstrip()
+        seq_list.append(seq)
+        sequence[seq] = seq_name
+    else:
+        seq_name = re.findall(r'>(.*)', line.rstrip())[0]
 
 def compare(seq1, seq2, identical=0, score=0):
     for i in range(len(seq1)):
@@ -22,17 +28,17 @@ def compare(seq1, seq2, identical=0, score=0):
             score += matrix[seq1[i]][seq2[i]]
     return score, identical
 
-for i in range(len(seq)):
+for i in range(len(seq_list)):
     if i != 2:
-        seq1 = seq[i]
-        seq2 = seq[i+1]
+        seq1 = seq_list[i]
+        seq2 = seq_list[i+1]
     else:
-        seq1 = seq[i]
-        seq2 = seq[i-2]
+        seq1 = seq_list[i]
+        seq2 = seq_list[i-2]
     score_sum, identical = compare(seq1, seq2, identical=0, score=0)    
-    percentage = f'{identical / len(seq[0]):.2%}'
-    print(f'The identical percentage is {percentage}.')
-    print(f'The score is {score_sum}.')
+    percentage = f'{identical / len(seq_list[0]):.2%}'
+    print(f'For the {sequence[seq1]} and {sequence[seq2]}:\nThe identical percentage is {percentage}.')
+    print(f'The score is {score_sum}.\n')
 
 '''
 1. Length and subcellular localisation of human Sod2
