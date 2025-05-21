@@ -1,9 +1,17 @@
 Problem: Plot a boxplot of DALYs across countries in 1990.
 
-Solution lines: 52 - 59 lines
+Solution lines: 57 - 64 lines
 
 Results: A boxplot od DALYs across conutries in 1990.
     The results meet my expectation.
     I select all DALYs data which is in 1990, the put them in a new variables as series 'dalys_1990'.
     To draw the boxplot to show the distribution of basic statistic state of DALYs in 1990, dalys_1990
     serve as the y values and become the only group.
+
+
+Second problem: What country or countries have recorded a DALYs greater than 650,000 in a single year?
+
+Solution lines: 67 - 68 line
+
+Results: I don't run it and leave it as a comment. But if running,
+it will show the countries have a a DALYs greater than 650,000. And the country is Rwanda.

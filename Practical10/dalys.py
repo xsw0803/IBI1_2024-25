@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 os.chdir("/Users/xsw0803/Desktop/Programme/IBI_practicals/IBI1_2024-25/Practical10/")
-print(os.getcwd())
-print(os.listdir())
+'''print(os.getcwd())
+print(os.listdir())'''
 
 dalys_data = pd.read_csv("dalys-rate-from-all-causes.csv")
 '''print(dalys_data.head(5))'''
@@ -16,6 +16,7 @@ find_af = []
 for i in af_year:
     find_af.append(i)
 print(sorted(find_af)[9])
+
 # The tenth year of record in Afghanistan is 1999.
 
 find_1990 = []
@@ -32,15 +33,18 @@ print(dalys_data.loc[year.index, ['Year', 'DALYs']])
 
 uk = dalys_data.loc[dalys_data['Entity'] == 'United Kingdom', ['DALYs', 'Year']]
 france = dalys_data.loc[dalys_data['Entity'] == 'France', ['DALYs', 'Year']]
-print(uk['DALYs'].mean(), france['DALYs'].mean())
+print(f'{uk['DALYs'].mean():.2f}, {france['DALYs'].mean():.2f}')
+
 # UK DALYs is bigger than France.
-'''if uk['DALYs'].mean() > france['DALYs'].mean():
+
+if uk['DALYs'].mean() > france['DALYs'].mean():
     print('UK DALYs is bigger.')
 elif uk['DALYs'].mean() == france['DALYs'].mean():
     print('UK and France DALYs is the same.')
 else:
-    print('France DALYs is bigger.')'''
+    print('France DALYs is bigger.')
 
+# UK DALYs is bigger than France.
 
 plt.figure(figsize=(8, 6))
 plt.plot(uk.Year, uk.DALYs, 'b+')
@@ -49,7 +53,7 @@ plt.xlabel('Year')
 plt.ylabel('DALYs')
 plt.title('DALYS over time in the UK')
 
-
+# Additional question soultion.
 dalys_1990 = dalys_data.loc[year.index, 'DALYs']
 plt.figure(figsize=(8, 5)) 
 box = plt.boxplot(dalys_1990)
@@ -59,4 +63,6 @@ plt.ylabel('DALYs')
 plt.title('Distribution of DALYs across countries in 1990')
 plt.show()
 
-'''print(dalys_data.loc[dalys_data['DALYs'] > 650000, 'Entity'])'''
+# Second additional question solution.
+'''entity = dalys_data.loc[dalys_data['DALYs'] > 650000, 'Entity'].to_string(index = False)
+print(f'The country recorded a DALYs greater than 650,000 in a single year is {entity}.')'''
