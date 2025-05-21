@@ -10,10 +10,11 @@ class GOHandler(xml.sax.ContentHandler):
         self.current_element = ''
         self.current_namespace = ''
         self.current_id = ''
+        self.current_name = ''
         self.is_a_count = 0
         self.max_terms = {}
         for ontology in ontologies:
-            self.max_terms[ontology] = ('', 0)
+            self.max_terms[ontology] = ('', '', 0)
 
     def startElement(self, tag, attributes):
         self.current_element = tag
@@ -23,16 +24,19 @@ class GOHandler(xml.sax.ContentHandler):
             self.current_namespace += content
         elif self.current_element == 'id':
             self.current_id += content
+        elif self.current_element == 'name':
+            self.current_name += content
         elif self.current_element == 'is_a':
             self.is_a_count += 1
 
     def endElement(self, tag):
         if tag == 'term':
             if self.current_namespace in self.max_terms:
-                if self.is_a_count > self.max_terms[self.current_namespace][1]:
-                    self.max_terms[self.current_namespace] = (self.current_id, self.is_a_count)
+                if self.is_a_count > self.max_terms[self.current_namespace][2]:
+                    self.max_terms[self.current_namespace] = (self.current_id, self.current_name, self.is_a_count)
             self.current_namespace = ''
             self.current_id = ''
+            self.current_name = ''
             self.is_a_count = 0
         self.current_element = ''
 
@@ -44,20 +48,21 @@ dom_tree = xml.dom.minidom.parse('go_obo.xml')
 terms = dom_tree.getElementsByTagName('term')
 max_terms = {}
 for ontology in ontologies:
-    max_terms[ontology] = ('', 0)
+    max_terms[ontology] = ('', '', 0)
 
 for term in terms:
     namespace = term.getElementsByTagName('namespace')[0].firstChild.nodeValue
     term_id = term.getElementsByTagName('id')[0].firstChild.nodeValue
+    term_name = term.getElementsByTagName('name')[0].firstChild.nodeValue
     is_a_count = len(term.getElementsByTagName('is_a'))
 
-    if namespace in max_terms and is_a_count > max_terms[namespace][1]:
-        max_terms[namespace] = (term_id, is_a_count)
+    if namespace in max_terms and is_a_count > max_terms[namespace][2]:
+        max_terms[namespace] = (term_id, term_name, is_a_count)
 
 end_time = datetime.now()
 dom_time = end_time - start_time
-for ontology, (term_id, count) in max_terms.items():
-    print(f'[DOM] {ontology}: {term_id} have max {count} is_a.')
+for ontology, (term_id, term_name, count) in max_terms.items():
+    print(f'[DOM] {ontology}: {term_id} <{term_name}> have max {count} is_a.')
 
 print(f'DOM parsing time: {dom_time.total_seconds():.4f} seconds.\n')
 
@@ -69,8 +74,8 @@ parser.setContentHandler(handler)
 parser.parse(xml_file)
 end_time = datetime.now()
 sax_time = end_time - start_time
-for ontology, (term_id, count) in handler.max_terms.items():
-    print(f'[SAX] {ontology}: {term_id} have max {count} is_a.')
+for ontology, (term_id, term_name, count) in handler.max_terms.items():
+    print(f'[SAX] {ontology}: {term_id} <{term_name}> have max {count} is_a.')
 
 print(f'SAX parsing time: {sax_time.total_seconds():.4f} seconds.\n')
 
