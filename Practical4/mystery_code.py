@@ -1,5 +1,5 @@
 # What does this piece of code do?
-# Answer: check it will take how many times to let two random numbers equal.
+# Answer: check it will take how many times to let two random numbers (from one to six) equal.
 
 # Import libraries
 # randint allows drawing a random number,
@@ -15,7 +15,7 @@ progress=0
 while progress>=0:
 	#each run add one lap to represent the number of loops
 	progress+=1
-	#make two random numbers
+	#make two random numbers within one to six (not included six).
 	first_n = randint(1,6)
 	second_n = randint(1,6)
 	#if random numbers equal
