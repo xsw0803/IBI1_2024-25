@@ -1,0 +1,21 @@
+1. Length and subcellular localisation of human Sod2
+    Length = 222 amino acids
+    Localization: Mitochondria
+
+2. The range of	percentage identities in the reported online BLAST results:
+    Range = 58.1% ~ 100%
+
+3. Comparison analysis
+SODM_human and SODM_mouse:
+Identical percentage = 90.09%
+Score = 1097.0
+
+SODM_human and random:
+Idnetical percentage = 4.95%
+Score = -260.0
+
+SODUM_mouse and random:
+Idnetical percentage = 4.50%
+Score = -262.0
+
+4. Huamn and mouse SODM sequences are mostly related.
