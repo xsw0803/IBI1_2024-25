@@ -63,6 +63,10 @@ def recover(population, infected_list):
 def infect(x, y):
     population[x, y] = 1
 
+plt.figure(figsize = (6,4), dpi =150)
+plt.imshow(population, cmap='viridis', interpolation='nearest')
+plt.title(f"Plot for time step at 0.")
+
 # Start for loop in time course to do whole simulation.
 for i in range(time_step +1):
     # Find infected ones.
@@ -79,13 +83,10 @@ for i in range(time_step +1):
         infect(x, y)
     
     # Create a list of time steps.
-    print_times = [0, 10, 50, 100]
+    print_times = [1, 10, 50, 100]
     # Draw four pictures when the time step is in the list and create a subplot to show them all.
     if i in print_times:
-        plt.subplot(2, 2, print_times.index(i) + 1)
+        plt.figure()
         plt.imshow(population, cmap='viridis', interpolation='nearest')
-        plt.title(f"Plot for time step at {i}")
-        
-# Adjust the illustration automatically.
-plt.tight_layout()
-plt.show()
+        plt.title(f"Plot for time step at {i+1}.")
+        plt.show()
